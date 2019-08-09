@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Budget System</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="CSS/style.css">
+	<script type="text/Javascript">
+	window.onload = function(){
+	 document.getElementById('formatted').style.visibility = 'hidden';
+	 document.getElementById('myff').style.display = 'block';
+	}
+	</script>
+</head>
+<body>
+<header>
+<div class="container-fluid bg-primary text-center">
+	<div id="row">
+		<div class="col-12">
+			<h1 >E-BUDGET</h1>
+	</div>			
+	</div>
+
+</div>
+</header>
+
+<div id="myff">
+	<div class="container text-center">
+		<h5>Please fill in Required Informations</h5>
+	</div>
+	<div class="contai_er">
+		<div class="row">
+		<form name="myform">
+			<div class="col-sm-5 col-sm-offset-1">
+			<div class="form-group">
+				<label>Income:</label>
+					<input type="text" class="form-control" name="gender" id="Income" required="required" style="width:100px;text-align:right;">
+			</div>
+			<div class="form-group">
+				<label>Name:</label>
+					<input type="text" class="form-control" id="name_of_person" name="name" required="required">
+			</div>
+			<div class="form-group">
+				<label> Age:</label>
+					<input type="text" class="form-control" name="age" id="age" required="required">
+			</div>
+			<div class="form-group">
+				<label>Gender:</label>
+					<input type="text" class="form-control" name="gender" id="gen_er" required="required">
+			</div>
+			<div class="form-group">
+				<label>Marital Status:</label><br>
+					<input type="text"class="form-control" name="status" id="stat_s" required="required">
+			</div>
+			<div class="form-group">
+				<label>Number of dependents:</label><br>
+					<input type="text" class="form-control" name="dependents" id="dependent" required="required"><br><br>
+			</div>
+			<div class="form-group">
+				<input type="button" class="form-control btn btn-primary btn-sm" value="Submit" onclick="compute();">
+			</div>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+</section>
+<div id="formatted">
+<script type="text/JavaScript">
+	//alert('ooop');
+	/*
+	var x = document.getElementById('formatted');
+  x.style.visibility = 'hidden';
+	
+	*/
+
+	</script>
+	<div style="margin-left:auto; margin-right:auto; width:500px;"><span id="na_me" ></span></div>
+		<div class="container">
+		<table id="budcard" style="width: 90%;">
+
+	<tr>
+		<th style="text-align: center;"><strong>Budget Categories</strong></th>
+		<th style="text-align: center;"><strong>Percentage</strong></th>
+		<th style="text-align: center;"><strong>Amount</strong></th>
+		
+	</tr>
+	<tr>
+		<td>Housing</td>
+		<td style="text-align: right;">25%</td>
+		<td style="text-align: center;"><span id="house1" size="8"></span></td>
+		
+	</tr>
+	
+	<tr>
+		<td>Food</td>
+		<td style="text-align: right;">10%</td>
+		<td style="text-align: center;"><span id="feed1" size="8"></span></td>
+		
+	</tr>
+	
+	<tr>
+		<td>Utilities</td>
+		<td style="text-align: right;">10%</td>
+		<td style="text-align: center;"><span id="utility1" size="8"></span></td>
+		
+	</tr>
+	
+	<tr>
+		<td>Transportation</td>
+		<td style="text-align: right;">10%</td>
+		<td style="text-align: center;"><span id="transport1" size="8"></span></td>
+		
+	</tr>
+	
+	<tr>
+		<td>Clothing</td>
+		<td style="text-align: right;">5%</td>
+		<td style="text-align: center;"><span id="cloth1" size="8"></span></td>
+		
+	</tr>
+	
+	<tr>
+		<td>Medicals/Health</td>
+		<td style="text-align: right;">5%</td>
+		<td style="text-align: center;"><span id="med1" size="8"></span></td>
+		
+	</tr>
+	
+	<tr>
+		<td>Personal Care</td>
+		<td style="text-align: right;">5%</td>
+		<td style="text-align: center;"><span id="care1"size="8"></span></td>
+		
+	</tr>
+	
+	<tr>
+		<td>Recreation</td>
+		<td style="text-align: right;">5%</td>
+		<td style="text-align: center;"><span id="rec1" size="8"></span></td>
+	
+	</tr>
+	
+	<tr>
+		<td>Giving</td>
+		<td style="text-align: right;">15%</td>
+		<td style="text-align: center;"><span id="give1" size="8"></span></td>
+		
+	</tr>
+	
+	<tr>
+		<td>Saving</td>
+		<td style="text-align: right;">10%</td>
+		<td style="text-align: center;"><span  id="save1" size="8"></span></td>
+		
+	</tr>
+	
+	
+</table>
+</div>
+</div>
+
+<script>
+function compute(){
+//document.getElementById('formatted').style.visibility = 'visible';
+var naira;
+naira = "N";
+	var B_income = document.getElementById('Income').value;
+	//alert(B_income);
+	var house1 = 0.25;
+	var B_house = B_income * house1;
+	//alert(tt);
+		document.getElementById("house1").innerHTML = naira+B_house;
+	var feed1 = 0.1;
+	var B_feeding = B_income * feed1;
+		document.getElementById("feed1").innerHTML = naira+B_feeding;
+	
+	var utility1 = 0.1;
+	var B_utility = B_income * utility1;
+		document.getElementById("utility1").innerHTML =naira+ B_utility;
+		
+	var transport1 = 0.1;
+	var B_transport = B_income * transport1;
+		document.getElementById("transport1").innerHTML = naira+B_transport;
+		
+	var cloth1 = 0.05;
+	var B_cloth = B_income * cloth1;
+		document.getElementById("cloth1").innerHTML = naira+B_cloth;
+		
+	var med1 = 0.05;
+	var B_med = B_income * med1;
+		document.getElementById("med1").innerHTML = naira+B_med;
+		
+	var care1 = 0.05;
+	var B_care = B_income * care1;
+		document.getElementById("care1").innerHTML = naira+B_care;
+		
+	var rec1 = 0.05;
+	var B_rec = B_income * rec1;
+		document.getElementById("rec1").innerHTML = naira+B_rec;
+		
+	var give1 = 0.15;
+	var B_give = B_income * give1;
+		document.getElementById("give1").innerHTML = naira+B_give;
+		
+	var save1 = 0.1;
+	var B_save = B_income * save1;
+		document.getElementById("save1").innerHTML= naira+B_save;
+		
+		//disp = document.getElementById("formatted");
+
+		//disp.style.visibility = 'visible';
+		
+		
+  var f = document.getElementById('formatted');
+  if (f.style.visibility === 'hidden') {
+    f.style.visibility = 'visible';
+  } else {
+    f.style.visibility = 'hidden';
+  }
+  
+  
+  var ff = document.getElementById('myff');
+  if (ff.style.display === 'block') {
+    ff.style.display = 'none';
+  } else {
+    ff.style.display = 'block';
+  }
+
+/* variable declaration */
+var  name,age,gender,mat,dep;
+
+	name=document.getElementById("name_of_person").value;
+	age=document.getElementById("age").value;	
+	gender=document.getElementById("gen_er").value;
+	status=document.getElementById("stat_s").value;
+	depend=document.getElementById("dependent").value;
+	var dd;
+	dd = "Hello <strong>"+name+"</strong> this is budget is recommended for you ";
+	document.getElementById("na_me").innerHTML = dd;
+}
+</script>
+
+</body>
+</html>
